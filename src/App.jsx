@@ -44,11 +44,11 @@ function App() {
           score: Math.floor(Math.random() * 900),
         }))
       );
-    }, 1000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
-  const sortPlayerData = player.sort((a, b) => a.score - b.score);
+  const sortPlayerData = [...player].sort((a, b) => a.score - b.score);
 
   const tableData = ["Rank", "Name", "Score"];
   return (
@@ -74,9 +74,9 @@ function App() {
           <div className="px-3 text-black font-bold w-15">
             <h3>{val.score}</h3>
           </div>
-          <div className="px-3 text-black font-bold w-15">
+          {/* <div className="px-3 text-black font-bold w-15">
             <h3>{val.status}</h3>
-          </div>
+          </div> */}
         </div>
       ))}
     </div>
